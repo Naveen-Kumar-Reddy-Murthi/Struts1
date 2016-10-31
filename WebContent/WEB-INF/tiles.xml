@@ -1,0 +1,33 @@
+<!DOCTYPE tiles-definitions PUBLIC
+"-//Apache Software Foundation//DTD Tiles Configuration 1.3//EN"
+"http://struts.apache.org/dtds/tiles-config_1_3.dtd">
+
+<tiles-definitions>
+	<definition name="tiles-main" path="/tiles/tiles-layout.jsp">
+		<put name="header" value="/tiles/header.jsp" />
+		<put name="left-content" value="/tiles/left-content.jsp" />
+		<put name="main-content" value="/tiles/main-content.jsp" />
+		<put name="footer" value="/tiles/footer.jsp" />
+	</definition>
+
+	<definition name="tiles-main-success" extends="tiles-main">
+		<put name="main-content" value="/tiles/success.jsp" />
+	</definition>
+	<definition name="tiles-main-failure" extends="tiles-main">
+		<put name="main-content" value="/tiles/error.jsp" />
+	</definition>
+	<definition name="tiles-main-add" extends="tiles-main">
+		<put name="main-content" value="/tiles/add.jsp" />
+	</definition>
+	<definition name="tiles-main-update" extends="tiles-main">
+		<put name="main-content" value="/tiles/update.jsp" />
+	</definition>
+	<definition name="tiles-main-delete" extends="tiles-main">
+		<put name="main-content" value="/tiles/delete.jsp" />
+	</definition>
+	<definition name="tiles-main-show" extends="tiles-main">
+		<put name="main-content" value="/tiles/show.jsp"></put>
+	</definition>
+
+
+</tiles-definitions>

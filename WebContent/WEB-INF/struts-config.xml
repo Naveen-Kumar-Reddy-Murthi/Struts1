@@ -11,10 +11,15 @@
 			<form-property name="password" type="java.lang.String" />
 		</form-bean>
 		<form-bean name="DynaFormBean"
-			type="org.apache.struts.validator.DynaValidatorForm">
+			type="org.apache.struts.action.DynaActionForm">
 			<form-property name="id" type="java.lang.String" />
 			<form-property name="value" type="java.lang.String" />
 			<form-property name="function" type="java.lang.String" />
+		</form-bean>
+		<form-bean name="DynaValidationActionFormTiles" type="org.apache.struts.validator.DynaValidatorActionForm">
+			<form-property name="name" type="java.lang.String" reset="true"/>
+			<form-property name="password" type="java.lang.String" reset="true"/>
+			<form-property name="function" type="java.lang.String" reset="true" />
 		</form-bean>
 	</form-beans>	
 	
@@ -58,6 +63,18 @@
 			<forward name="success" path="/success.jsp"/>
 			<forward name="failure" path="/error.jsp" />
 		</action>
+		
+		<action path="/homeTile" 	forward="tiles-main"/>
+		<action path="/addTile" 	forward="tiles-main-add"/>
+		<action path="/updateTile"  forward="tiles-main-update"/>
+		<action path="/deleteTile"  forward="tiles-main-delete"/>
+		<action path="/showTile" 	forward="tiles-main-show"/>
+		<action name="DynaValidationActionFormTiles" type="org.mnr.action.TilesAction" 
+		parameter="function" path="/tilesAction">
+			<forward name="success"  path="tiles-main-success"/>
+			<forward name="error"  path="tiles-main-failure"/>
+		</action>
+		
 	</action-mappings>
 	<message-resources parameter="Application" key="app" />
 	<message-resources parameter="Labels" key="labels" />
@@ -67,5 +84,10 @@
 		<set-property property="pathnames"
 			value="/WEB-INF/validator-rules.xml,/WEB-INF/validation.xml" />
 	</plug-in>
+	<plug-in className="org.apache.struts.tiles.TilesPlugin">
+		<set-property property="definitions-config" value="/WEB-INF/tiles.xml"/>
+		<set-property property="moduleAware" value="true"/>
+	</plug-in>
+	
 
 </struts-config>

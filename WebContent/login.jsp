@@ -25,9 +25,10 @@
 			<html:errors property="password.err" />
 			<br>
 			<br>
-			<html:submit property="login" value="Login" />
-			<a href="dynaLoginForm">DeclarativeDynamicFormBean</a>
-			<a href="signUpForm">Sign Up</a>
+			<html:submit property="login" value="Login" /><br><br>
+			<a href="dynaLoginForm">DeclarativeDynamicFormBean</a><br><br>
+			<a href="signUpForm">Sign Up</a><br><br>
+			<a href="homeTile">Show Tiles Page</a>
 			
 		</html:form>
 	</center>

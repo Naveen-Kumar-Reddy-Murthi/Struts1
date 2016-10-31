@@ -57,15 +57,23 @@
 		</form>
 		<form name="DynaFormBean">
 			<field property="id" depends="required">
-				<arg0 key="id"/>
+				<arg0 key="id" />
 			</field>
 			<field property="value" depends="required,minlength">
-				<arg0 key="value"/>
-				<arg1 key="${var:minlength}" resource="false"/>
+				<arg0 key="value" />
+				<arg1 key="${var:minlength}" resource="false" />
 				<var>
 					<var-name>minlength</var-name>
 					<var-value>8</var-value>
 				</var>
+			</field>
+		</form>
+		<form name="DynaValidationActionFormTiles">
+			<field property="name" depends="required">
+				<arg0 key="name" />
+			</field>
+			<field property="password" depends="required">
+				<arg0 key="password"/>
 			</field>
 		</form>
 	</formset>

@@ -18,8 +18,9 @@ public class CustomAction extends DispatchAction{
 			HttpServletRequest request, HttpServletResponse response)
 			throws Exception {
 		
-		DynaValidatorForm dynaForm = (DynaValidatorForm) form;
-		System.out.println("dynaFormData:"+dynaForm);
+		DynaActionForm dynaForm = (DynaActionForm) form;
+		System.out.println(dynaForm.getClass());
+		System.out.println("dynaFormData123:"+dynaForm);
 		System.out.println("id:"+dynaForm.get("id"));
 		System.out.println("id:"+dynaForm.get("value"));
 		System.out.println("id:"+dynaForm.get("function"));
